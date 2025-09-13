@@ -89,6 +89,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     13. cretaed redux store and slice
     14. update profile 
 
+    15. bug fixing signup user display profile name
+    16. bug fixing on routing when users is loggedin  or vice versa
+    17. unsubscribe the authentication
+    18. add hard coded values to the constant files
+    19. register the TMDB api & CREATE an app and access token
+    20. get the data from TMDB api and movies list api
+    21. custom hook for now playing movies
+    22. crate movieSlice
+    23. update the store the movies data
+    24. fethc data for trailer video and update the store trailerVideo
+    25. Planning for main-container and secondary-container
+    26. embedded the youtube video and its autoplay with mute
+    27. use tailwind classes maincontainer to look awesome
+
 
 ### Feature Want to Develop
 ### 1. Login/Signup page

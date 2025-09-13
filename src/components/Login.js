@@ -3,14 +3,12 @@ import Header from './Header'
 import { checkValidation } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BG_LOGO } from '../utils/constants';
 
 
 export const Login = () => {
-
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const emailRef = useRef(null);
     const nameRef = useRef(null);
@@ -36,13 +34,11 @@ export const Login = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                console.log('user', user)
                 updateProfile(user, {
                     displayName: nameRef.current.value, 
                 }).then(() => {
                     const {uid, email, displayName} = auth.currentUser;
                     dispatch(addUser({uid: uid, email: email, displayName: displayName}));
-                    navigate('/browse');
                 }).catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
@@ -61,8 +57,6 @@ export const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log('signin user', user)
-                navigate('/browse');
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -80,7 +74,7 @@ export const Login = () => {
                 <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
 
                 {/* Background image */}
-                <img src='https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_large.jpg' alt='Bgimg' className="w-full h-full object-cover"
+                <img src={BG_LOGO} alt='Bgimg' className="w-full h-full object-cover"
                 />
 
                 {/* Form content */}
