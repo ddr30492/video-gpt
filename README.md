@@ -102,6 +102,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     25. Planning for main-container and secondary-container
     26. embedded the youtube video and its autoplay with mute
     27. use tailwind classes maincontainer to look awesome
+    28. crate secodnary container
+    29. integrate popular, treding, upcoming movie list creating custom hooks
+    30. make it css for movie card and movie list
 
 
 ### Feature Want to Develop
